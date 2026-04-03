@@ -1,26 +1,89 @@
-@import "tailwindcss";
+@reference "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer components {
+  /* Feature Cards Styling */
+  .feature-card-wrapper {
+    position: relative;
+    isolation: isolate;
+    margin-bottom: 1rem;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  .feature-card-glow {
+    position: absolute;
+    inset: -2px;
+    border-radius: 0.75rem;
+    z-index: -1;
+  }
+
+  .feature-card-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Ensure proper spacing after features grid */
+  .features-grid {
+    margin-bottom: 4rem !important;
+  }
+
+  @media (min-width: 768px) {
+    .features-grid {
+      margin-bottom: 5rem !important;
+    }
+  }
+
+  .react-select-container {
+    position: relative;
+  }
+
+  .react-select__control {
+    @apply border border-gray-300 dark:border-gray-600 rounded-lg;
+    @apply hover:border-purple-500 dark:hover:border-purple-400;
+    min-height: 42px;
+  }
+
+  .react-select__control--is-focused {
+    @apply border-purple-500 dark:border-purple-400;
+    @apply ring-2 ring-purple-500;
+    box-shadow: none;
+  }
+
+  .react-select__menu {
+    @apply bg-white dark:bg-gray-700;
+    @apply border border-gray-200 dark:border-gray-600;
+    @apply shadow-lg;
+    z-index: 100;
+  }
+
+  .react-select__option {
+    @apply text-gray-900 dark:text-gray-100;
+    @apply hover:bg-purple-100 dark:hover:bg-purple-900;
+  }
+
+  .react-select__option--is-selected {
+    @apply bg-purple-600 dark:bg-purple-700 text-white;
+  }
+
+  .react-select__multi-value {
+    @apply bg-purple-100 dark:bg-purple-900;
+    @apply border border-purple-200 dark:border-purple-800;
+  }
+
+  .react-select__multi-value__label {
+    @apply text-purple-900 dark:text-purple-100 px-2;
+  }
+
+  .react-select__multi-value__remove {
+    @apply hover:bg-purple-200 dark:hover:bg-purple-800;
+    @apply hover:text-purple-900 dark:hover:text-purple-100;
+  }
+
+  .react-select__input-container,
+  .react-select__placeholder,
+  .react-select__single-value {
+    @apply text-gray-900 dark:text-gray-100;
+  }
 }
