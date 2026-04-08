@@ -28,10 +28,7 @@ AI Interview Prep SaaS is a production-grade AI-powered platform designed to hel
 
 ### Product Demo
 
-<div align="center">
-  <video src="assets/videos/demo/demo.mp4" autoplay muted loop playsinline style="width: 100%; max-width: 800px; border-radius: 10px; border: 1px solid #ddd;">
-  </video>
-</div>
+![AI Interview Prep Demo](assets/videos/demo/demo2.gif)
 
 ---
 
